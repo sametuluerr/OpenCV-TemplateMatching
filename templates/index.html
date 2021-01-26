@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block body %}
+<div class="jumbotron text-center">
+  <h1>Şablon Eşleştirme</h1>
+  <p class="lead"></p>
+  <p>
+    <a class="btn btn-light border-radius-8"
+       href="uploadPhotos"
+       role="button"><i class="fas fa-cloud-upload-alt"></i>&nbsp;Fotoğraf Üzerinde Şablon Eşleştirme</a>
+  <p> <a class="btn btn-light border-radius-8 template-button"
+       href="uploadTemplate"
+       role="button"><i class="fas fa-cloud-upload-alt"></i>&nbsp;Gerçek Zamanlı Şablon Eşleştirme</a></p>
+  </p>
+</div>
+<div class="row marketing text-justify justify-content-center">
+  <img src="../static/images/method.png"  height="150px" alt="">
+  <div class="col-lg-11">
+    <p>
+      Şablon Eşleştirme, görüntü işleme, sinyal işleme, video sıkıştırma ve örüntü tanıma gibi farklı
+      alanlarda gerçekleştirilebilir. Bu çalışmada Şablon Eşleştirme algoritmalarından Normalleştirilmiş
+      Çapraz Korelasyon (NCC) algoritması kullanılarak aranan şablonun fotoğraf üzerinde veya kameradan
+      alınan gerçek zamanlı video üzerinde hangi konumda bulunduğunu belirleyen bir uygulama geliştirilmiştir.
+      Günümüzde birçok alanda görüntü işleme teknikleri kullanılmaktadır. Bir görüntünün şablon görüntüsüyle eşleşen
+      kısmını bulmak için kullanılan Şablon Eşleştirme tekniği de bu tekniklerden biridir. Nesneyi konuma eşleştirme ve
+      görüntülerin kenar tespiti dahil olmak üzere geniş kapsamlı uygulamalarının bazıları, mobil robotlar için bir rota
+      çizmek için, tıbbi görüntülemede de uygulamaları olan görüntü kayıt tekniklerinde ve insansız hava araçlarının
+      belirlenen
+      hedefleri bularak atış yapması veya bu hedeflerin konumlarının belirlemesinde Şablon Eşleştirme yöntemi
+      kullanılabilir.
+
+    </p>
+  </div>
+</div>
+{% endblock %}

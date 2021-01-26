@@ -1,0 +1,92 @@
+{% extends "layout.html" %} {% block body %}
+<div class="row text-justify">
+  <div class="col-lg-12">
+    <h2>Şablon Eşleştirme Nedir?</h2>
+    <p>
+      Şablon Eşleştirme, bir şablon görüntünün konumunu daha büyük bir görüntüde
+      aramak ve bulmak için kullanılan bir yöntemdir. Şablon, aranan nesnenin
+      kendisidir (ve dolayısıyla görüntünün kendisidir) ve şablon ile görüntünün
+      şablonla eşleşebilecek tüm olası bölümleri arasındaki bir fark ölçüsü
+      hesaplayarak görüntüyü aramak için kullanılır. Kısaca Şablon Eşleştirme,
+      bir görüntünün verilen görüntü modeliyle eşleşen bölümlerinin
+      tanımlanmasına olanak tanıyan üst düzey bir makineli görme tekniğidir.
+    </p>
+    <h3>Nasıl Çalışır?</h3>
+    Şablon Eşleştirmeyi gerçekleştirmek için iki ana bileşene ihtiyacımız var.
+    <ul>
+      <li>
+        Kaynak resim: Şablon resmiyle bir eşleşme bulmayı düşündüğümüz resim.
+      </li>
+      <li>
+        Şablon resmi: Kaynak görüntü ile karşılaştırılacak şablon görüntüsü.
+      </li>
+    </ul>
+    Amacımız kaynak resim üzerinde şablon görüntüsüyle en yüksek oranda eşleşen
+    alanı tespit etmek:
+    <div class="text-center">
+      <img
+        src="../static/images/Template_Matching_Template_Theory_Summary.png"
+        class="rounded"
+        alt="Şablon Eşleştirme"
+      />
+    </div>
+    <ul>
+      <li>
+        Eşleşen alanı belirlemek için şablon görüntüsünü kaynak görüntüsü
+        üzerinde kaydırarak karşılaştırmalıyız:
+      </li>
+    </ul>
+    <div class="text-center">
+      <img
+        src="../static/images/Template_Matching_Template_Theory_Sliding.png"
+        class="rounded"
+        alt="Şablon Eşleştirme"
+      />
+    </div>
+    <ul>
+      <li>
+        Kaydırarak, şablonu bir seferde bir piksel hareket ettirmeyi
+        kastediyoruz (soldan sağa, yukarıdan aşağıya). Her konumda, o konumdaki
+        eşleşmenin ne kadar "iyi" veya "kötü" olduğunu (veya şablonun kaynak
+        görüntünün söz konusu belirli alanına ne kadar benzer olduğunu) temsil
+        edecek şekilde bir ölçüm hesaplanır.
+      </li>
+      <li>
+        Şablon görüntüsünün kaynak görüntü üzerindeki her konumu için, metriği R
+        sonuç matrisinde tutarız. R'deki her konum (x,y) eşleşme metriğini
+        içerir.
+      </li>
+    </ul>
+    <div class="text-center">
+      <img
+        src="https://docs.opencv.org/3.4/Template_Matching_Template_Theory_Result.jpg"
+        class="rounded"
+        alt="Şablon Eşleştirme"
+      />
+    </div>
+    <ul>
+      <li>
+        Yukarıdaki görüntü, şablonu Normallleştirilmiş Çapraz Korelasyon
+        algoritması kullanılarak kaydırmanın sonucu R'dir. En parlak yerler en
+        yüksek eşleşmeleri gösterir. Gördüğünüz gibi, kırmızı daire ile
+        işaretlenmiş konum muhtemelen en yüksek değere sahip olandır, bu nedenle
+        konum (bu noktanın köşe olarak oluşturduğu dikdörtgen ve şablon
+        görüntüsüne eşit genişlik ve yükseklik) eşleşme olarak kabul edilir.
+      </li>
+      <li>
+        Uygulamada, farklı Şablon Eşleştirme algoritmaları kullanarak daha
+        yüksek veya algoritmaya bağlı olarak daha düşük eşleşme sonuçları
+        bulabiliriz.
+      </li>
+    </ul>
+    <p>
+      Daha fazla bilgi için
+      <a
+        href="https://docs.opencv.org/3.4/de/da9/tutorial_template_matching.html"
+        target="_blank"
+        >tıklayınız.</a
+      >
+    </p>
+  </div>
+</div>
+{% endblock %}
